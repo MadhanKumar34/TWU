@@ -1,0 +1,83 @@
+An Employee app wants to store the following data points:
+firstName, lastName, age, houseNo, state, zipCode, salary, project, designation, role, tech stack, tech skills
+
+//Ans. class Employee
+- firstName: String
+- lastName: String
+- age: Number
+- address: Address
+- salary: Number
+- project: Project
+- tech skills: [String]
+- designation: String
+- role: String
+
+class Address
+- houseNo: Number
+- state: String
+- zipCode: Number
+
+class Project
+- project: String
+- tech stack: [String]
+
+class Super {
+    void foo() {
+        System.out.println("Super");
+    }
+}
+
+class Man extends Super {
+    static void foo() {
+        System.out.println("Man");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Super s = new Man();
+        s.foo();
+    }
+}
+//Ans. Compile time error
+
+class Parent {
+    private void foo() {
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+    public void foo() {
+        System.out.println("Child");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.foo(); // line 1
+        Parent p = new Child();
+        p.foo(); // line 3
+    }
+}
+//Ans. Compilation error at line 3
+
+Consider a Car object.
+//Ans. Data: engine displacement, make, model | Behaviour: drive, stop, start, reverse
+
+public class Test {
+    public static String toString() {
+        System.out.println("toString has been called");
+        return "";
+    }
+
+    public static void main(String args[]) {
+        System.out.println(toString());
+    }
+}
+//Ans. Compile-time error
+
+Consider an online bookstore system. In this system, objects such as Book, Author, Customer, and Order encapsulate the core business logic and rules.
+//Ans. Book: title, author, price, ISBN
+Order: order details, calculate total price, verify stock
